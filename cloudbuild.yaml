@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/rag-proto', '.']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['push', 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy']
 images:
-- 'gcr.io/$PROJECT_ID/rag-proto'
+- 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy/rag-proto'
