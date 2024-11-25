@@ -8,9 +8,9 @@ steps:
     rm -rf *
 
     # Clone the repository
-    git clone --depth 1 <your-repo-url> .
+    git clone --depth 1 `https://github.com/mamounalghaslan/rag-proto .
     cd .
-    git checkout <your-branch>
+    git checkout main
 
     # Install dependencies (Adapt to your needs.  Example for npm)
     npm install
