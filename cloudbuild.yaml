@@ -1,9 +1,28 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy', '.']
-  options:
-    logging: NONE
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['push', 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy']
+- name: 'ubuntu'
+  entrypoint: bash
+  args:
+  - -c
+  - |
+    # Clean up the workspace
+    rm -rf *
+
+    # Clone the repository
+    git clone --depth 1 <your-repo-url> .
+    cd .
+    git checkout <your-branch>
+
+    # Install dependencies (Adapt to your needs.  Example for npm)
+    npm install
+
+    # Build your application (Adapt to your needs. Example for npm)
+    npm run build
+
+    # Build the Docker image (using your existing image name)
+    docker build -t me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy .
+
+    # Push the Docker image
+    gcloud docker --project=gen-ai-436712 push me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy
+
 images:
-- 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy/rag-proto'
+- 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy'
