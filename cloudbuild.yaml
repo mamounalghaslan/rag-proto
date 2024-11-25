@@ -1,6 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy', '.']
+  options:
+    logsBucket: 'gs://rag-proto-cloud-run-log' # Replace with your bucket
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['push', 'me-central2-docker.pkg.dev/gen-ai-436712/cloud-run-source-deploy']
 images:
