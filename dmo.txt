@@ -1,0 +1,9 @@
+The Data Management Office (DMO), as the designated data owner of all company data per the official data sharing policy, requires access to unmasked personal data to effectively perform its critical functions and maintain regulatory compliance. While restricting access to masked data is understandable for many departments within the company, DMO's unique role necessitates an exception. Restricting DMO's access introduces significant delays, inaccuracies, and risks across numerous business processes, leading to operational inefficiencies and potential service disruptions. While a carefully controlled and audited system providing access to unmasked data is the long-term solution, its implementation requires significant effort and planning. Therefore, full access to unmasked data should be temporarily restored while this audited system is developed and implemented to ensure the DMO can continue to fulfill its critical responsibilities without compromising operational efficiency or regulatory compliance.
+
+Key areas affected by restricted access to unmasked data include, but are not limited to:
+
+1. Regulatory Reporting (e.g., SAMA)
+2. Month-End Closing
+3. Sales and Collections
+4. Data Reconciliation with external entities (Insurance companies, etc.)
+5. Internal Data Reconciliation (e.g., with Oracle Fusion)
